@@ -7,8 +7,8 @@ import (
 
 func TestGetFunFacts(t *testing.T) {
 	type test struct {
-		input //må skrive inn riktig type for input
-		want  //må skrive inn riktig type for return verdi
+		input string
+		want  string
 	}
 
 

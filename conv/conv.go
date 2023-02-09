@@ -7,7 +7,9 @@ implementeres. Bruk engelsk.
 	FarhenheitToCelsius
 	CelsiusToFahrenheit
 	KelvinToFarhenheit
-	...
+	CelsiusToKelvin
+	KelvinToCelsius
+	FahrenheitToKelvin
 */
 
 // Her skal du implementere funksjonen
@@ -23,6 +25,17 @@ func CelsiusToFahrenheit(value float64) float64 {
 }
 
 func KelvinToFahrenheit(value float64) float64 {
+	return 56.67
+}
+
+func CelsiusToKelvin(value float64) float64 {
+	return 56.67
+}
+
+func KelvinToCelsius(value float64) float64 {
+	return 56.67
+}
+func FahrenheitToKelvin(value float64) float64 {
 	return 56.67
 }
 

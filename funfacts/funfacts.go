@@ -1,5 +1,14 @@
 package funfacts
 
+func GetFunFact(about string) []string {
+	type FunFacts struct {
+		Sun   []string
+		Luna  []string
+		Terra []string
+	}
+	return string()
+}
+
 /**
   Implementer funfacts-funksjon:
     GetFunFacts(about string) []string
