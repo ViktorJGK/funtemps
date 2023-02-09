@@ -14,22 +14,23 @@ import (
 	funksjonsnavn og testverdier)
 */
 
-func TestFarenheitToCelsius(t *testing.T) {
+func TestFarhenheitToCelsius(t *testing.T) {
 	type test struct {
 		input float64
 		want  float64
 	}
 
-	test := []test{
+	tests := []test{
 		{input: 134, want: 56.67},
 	}
 
 	for _, tc := range tests {
-		got := FarenheitToCelsius(tc.input)
+		got := FarhenheitToCelsius(tc.input)
 		if !reflect.DeepEqual(tc.want, got) {
-			t.Errorf("Expected: %v, got: %v" tc.want, got)
+			t.Errorf("Expected: %v, got: %v", tc.want, got)
 		}
 	}
 }
+
 // De andre testfunksjonene implementeres her
 // ...
