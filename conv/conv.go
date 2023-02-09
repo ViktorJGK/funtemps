@@ -18,4 +18,12 @@ func FarhenheitToCelsius(value float64) float64 {
 	return 56.67
 }
 
+func CelsiusToFahrenheit(value float64) float64 {
+	return 56.67
+}
+
+func KelvinToFarhenheit(value float64) float64 {
+	return 56.67
+}
+
 // De andre konverteringsfunksjonene implementeres her
