@@ -14,7 +14,7 @@ implementeres. Bruk engelsk.
 // Du skal ikke formattere float64 i denne funksjonen
 // Gjør formattering i main.go med fmt.Printf eller
 // lignende
-func FarhenheitToCelsius(value float64) float64 {
+func FahrenheitToCelsius(value float64) float64 {
 	return 56.67
 }
 
@@ -22,7 +22,7 @@ func CelsiusToFahrenheit(value float64) float64 {
 	return 56.67
 }
 
-func KelvinToFarhenheit(value float64) float64 {
+func KelvinToFahrenheit(value float64) float64 {
 	return 56.67
 }
 
