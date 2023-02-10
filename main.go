@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/ViktorJGK/funtemps/conv"
 )
 
 // Definerer flag-variablene i hoved-"scope"
@@ -21,16 +22,52 @@ func init() {
 	   skal returnere output: 0°F er -17.78°C
 	*/
 
-	flag.Float64Var(&fahr, "F", 0.0 "temperatur i grader fahrenheit")
+	flag.Float64Var(&fahr, "F", 0.0, "temperatur i grader fahrenheit")
+	flag.Float64Var(&fahr, "C", 0.0, "temperatur i grader celsius")
+	flag.Float64Var(&fahr, "K", 0.0, "temperatur i grader kelvin")
 	//
 	flag.StringVar(&out, "out", "C", "beregne temperatur i C - celsius, F -farhenheit, K - Kelvin")
-	flag.StringVar(&funfacts, "funfacts", "sun", "\"fun-facts\") om sun - Solen, luna - Månen og terra - Jorden")
+	//	flag.StringVar(&funfacts, "funfacts", "sun", "\"fun-facts\") om sun - Solen, luna - Månen og terra - Jorden")
 	// Du må selv definere flag-variabelen for -t flagget, som bestemmer
 	// hvilken temperaturskala skal brukes når funfacts skal vises
 }
 
 func main() {
 	flag.Parse()
+	switch out {
+	case "C":
+		result := conv.FahrenheitToCelsius(fahr)
+		fmt.Printf("%v°F er %v°C\n", fahr, result)
+	case "K":
+		result := conv.FahrenheitToKelvin(fahr)
+		fmt.Printf("%v°F er %vK\n", fahr, result)
+	default:
+		fmt.Printf("%v°F\n", fahr)
+	}
+
+	switch out {
+	case "F":
+		result := conv.CelsiusToFahrenheit(fahr)
+		fmt.Printf("%v°C er %vF\n", fahr, result)
+	case "K":
+		result := conv.CelsiusToKelvin(fahr)
+		fmt.Printf("%v°C er %vK\n", fahr, result)
+	default:
+		fmt.Printf("%v°C\n", fahr)
+	}
+
+	switch out {
+	case "C":
+		result := conv.KelvinToCelsius(fahr)
+		fmt.Printf("%v°K er %vC\n", fahr, result)
+	case "F":
+		result := conv.KelvinToFahrenheit(fahr)
+		fmt.Printf("%v°K er %vF\n", fahr, result)
+	default:
+		fmt.Printf("%v°K\n", fahr)
+
+	}
+
 	/**
 	    Her må logikken for flaggene og kall til funksjoner fra conv og funfacts
 	    pakkene implementeres.
@@ -52,15 +89,17 @@ func main() {
 	*/
 
 	// Her er noen eksempler du kan bruke i den manuelle testingen
-	fmt.Println(fahr, out, funfacts)
+	// fmt.Println(fahr, out, funfacts)
 
-	fmt.Println("len(flag.Args())", len(flag.Args()))
-	fmt.Println("flag.NFlag()", flag.NFlag())
+	//fmt.Println("len(flag.Args())", len(flag.Args()))
+	//fmt.Println("flag.NFlag()", flag.NFlag())
 
-	fmt.Println(isFlagPassed("out"))
+	//	fmt.Println(isFlagPassed("out"))
 
 	// Eksempel på enkel logikk
 	if out == "C" && isFlagPassed("F") {
+		conv.FahrenheitToCelsius(fahr)
+
 		// Kalle opp funksjonen FahrenheitToCelsius(fahr), som da
 		// skal returnere °C
 		fmt.Println("0°F er -17.78°C")
