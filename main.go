@@ -103,6 +103,9 @@ func main() {
 	if out == "C" && isFlagPassed("F") {
 		conv.FahrenheitToCelsius(fahr)
 		fmt.Println("0°F er -17.78°C")
+	} else if out == "K" && isFlagPassed("F") {
+		conv.FahrenheitToKelvin(fahr)
+		fmt.Println("0°K er -273.15°C")
 	}
 }
 
