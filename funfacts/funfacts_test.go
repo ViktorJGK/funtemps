@@ -11,11 +11,14 @@ func TestGetFunFacts(t *testing.T) {
 		want  string
 	}
 
+	tests := []test{
+		{input: sun, want: fact},
+	}
 
 	for _, tc := range tests {
-		got := GetFunFacts(tc.input)
+		got := GetFunFact(tc.input)
 		if !reflect.DeepEqual(tc.want, got) {
-			t.Errorf("expected %v, got %v" tc.want, got)
+			t.Errorf("expected %v, got %v", tc.want, got)
 		}
 	}
 }

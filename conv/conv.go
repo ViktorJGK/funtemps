@@ -1,5 +1,7 @@
 package conv
 
+import "math"
+
 /*
 I denne pakken skal alle konverteringfunksjonene
 implementeres. Bruk engelsk.
@@ -16,27 +18,34 @@ implementeres. Bruk engelsk.
 // Du skal ikke formattere float64 i denne funksjonen
 // Gjør formattering i main.go med fmt.Printf eller
 // lignende
-func FahrenheitToCelsius(value float64) float64 {
-	return 56.67
+func FahrenheitToCelsius(Fahrenheit float64) float64 {
+	Celsius := (Fahrenheit - 32) * 5 / 9
+	return math.Round(Celsius*100) / 100
 }
 
-func CelsiusToFahrenheit(value float64) float64 {
-	return 56.67
+func CelsiusToFahrenheit(Celsius float64) float64 {
+	Fahrenheit := (Celsius * 1.8) + 32
+	return math.Round(Fahrenheit*100) / 100
 }
 
-func KelvinToFahrenheit(value float64) float64 {
-	return 56.67
+func KelvinToFahrenheit(Kelvin float64) float64 {
+	Fahrenheit := Kelvin*9/5 - 459.67
+	return math.Round(Fahrenheit*100) / 100
 }
 
-func CelsiusToKelvin(value float64) float64 {
-	return 56.67
+func CelsiusToKelvin(Celsius float64) float64 {
+	Kelvin := Celsius + 273.15
+	return math.Round(Kelvin*100) / 100
 }
 
-func KelvinToCelsius(value float64) float64 {
-	return 56.67
+func KelvinToCelsius(Kelvin float64) float64 {
+	Celsius := Kelvin - 273.15
+	return math.Round(Celsius*100) / 100
+
 }
-func FahrenheitToKelvin(value float64) float64 {
-	return 56.67
+func FahrenheitToKelvin(Fahrenheit float64) float64 {
+	Kelvin := (Fahrenheit + 459.67) * 5 / 9
+	return math.Round(Kelvin*100) / 100
 }
 
 // De andre konverteringsfunksjonene implementeres her

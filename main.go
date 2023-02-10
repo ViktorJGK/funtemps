@@ -60,7 +60,7 @@ func main() {
 	fmt.Println(isFlagPassed("out"))
 
 	// Eksempel på enkel logikk
-	if out === "C" && isFlagPassed("F") {
+	if out == "C" && isFlagPassed("F") {
 		// Kalle opp funksjonen FahrenheitToCelsius(fahr), som da
 		// skal returnere °C
 		fmt.Println("0°F er -17.78°C")
