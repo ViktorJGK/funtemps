@@ -3,12 +3,9 @@ package conv
 import "math"
 
 /*
-I denne pakken skal alle konverteringfunksjonene
-implementeres. Bruk engelsk.
-
-	FarhenheitToCelsius
+	FahrenheitToCelsius
 	CelsiusToFahrenheit
-	KelvinToFarhenheit
+	KelvinToFahrenheit
 	CelsiusToKelvin
 	KelvinToCelsius
 	FahrenheitToKelvin
@@ -18,6 +15,8 @@ implementeres. Bruk engelsk.
 // Du skal ikke formattere float64 i denne funksjonen
 // Gjør formattering i main.go med fmt.Printf eller
 // lignende
+
+// La til math.Round slik at output bare hadde 2 tall bak komma.
 func FahrenheitToCelsius(Fahrenheit float64) float64 {
 	Celsius := (Fahrenheit - 32) * 5 / 9
 	return math.Round(Celsius*100) / 100
@@ -47,5 +46,3 @@ func FahrenheitToKelvin(Fahrenheit float64) float64 {
 	Kelvin := (Fahrenheit + 459.67) * 5 / 9
 	return math.Round(Kelvin*100) / 100
 }
-
-// De andre konverteringsfunksjonene implementeres her

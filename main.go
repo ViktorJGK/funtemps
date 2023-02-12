@@ -100,13 +100,15 @@ func main() {
 	//	fmt.Println(isFlagPassed("out"))
 
 	// Eksempel på enkel logikk
-	if out == "C" && isFlagPassed("F") {
-		conv.FahrenheitToCelsius(fahr)
-		fmt.Println("0°F er -17.78°C")
-	} else if out == "K" && isFlagPassed("F") {
-		conv.FahrenheitToKelvin(fahr)
-		fmt.Println("0°K er -273.15°C")
-	}
+	/*
+		if out == "C" && isFlagPassed("F") {
+			conv.FahrenheitToCelsius(fahr)
+			fmt.Println("0°F er -17.78°C")
+		} else if out == "K" && isFlagPassed("F") {
+			conv.FahrenheitToKelvin(fahr)
+			fmt.Println("0°K er -273.15°C")
+		}
+	*/
 }
 
 // Funksjonen sjekker om flagget er spesifisert på kommandolinje

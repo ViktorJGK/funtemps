@@ -8,11 +8,11 @@ import (
 func TestGetFunFacts(t *testing.T) {
 	type test struct {
 		input string
-		want  string
+		want  []string
 	}
 
 	tests := []test{
-		{input: sun, want: fact},
+		{input: "sun", want: []string{}},
 	}
 
 	for _, tc := range tests {

@@ -6,7 +6,7 @@ func GetFunFact(about string) []string {
 		Luna  []string
 		Terra []string
 	}
-	return string()
+	return (string)
 }
 
 /**
