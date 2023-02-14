@@ -3,11 +3,14 @@ package main
 import (
 	"flag"
 	"fmt"
+
 	"github.com/ViktorJGK/funtemps/conv"
 )
 
 // Definerer flag-variablene i hoved-"scope"
 var fahr float64
+var cel float64
+var kelvin float64
 var out string
 var funfacts string
 
@@ -23,8 +26,8 @@ func init() {
 	*/
 
 	flag.Float64Var(&fahr, "F", 0.0, "temperatur i grader fahrenheit")
-	flag.Float64Var(&fahr, "C", 0.0, "temperatur i grader celsius")
-	flag.Float64Var(&fahr, "K", 0.0, "temperatur i grader kelvin")
+	flag.Float64Var(&cel, "C", 0.0, "temperatur i grader celsius")
+	flag.Float64Var(&kelvin, "K", 0.0, "temperatur i grader kelvin")
 	flag.StringVar(&out, "out", "C", "beregne temperatur i C - celsius, F -farhenheit, K - Kelvin")
 	//	flag.StringVar(&funfacts, "funfacts", "sun", "\"fun-facts\") om sun - Solen, luna - Månen og terra - Jorden")
 	// Du må selv definere flag-variabelen for -t flagget, som bestemmer
@@ -35,39 +38,43 @@ func main() {
 	flag.Parse()
 
 	//  Fahrenheit --> Celsius or Kelvin
-	switch out {
-	case "C":
-		result := conv.FahrenheitToCelsius(fahr)
-		fmt.Printf("%v°F er %v°C\n", fahr, result)
-	case "K":
-		result := conv.FahrenheitToKelvin(fahr)
-		fmt.Printf("%v°F er %vK\n", fahr, result)
-	default:
-		fmt.Printf("%v°F\n", fahr)
-	}
+	if fahr != 0.0 {
+		switch out {
+		case "C":
+			result := conv.FahrenheitToCelsius(fahr)
+			fmt.Printf("%v°F er %v°C\n", fahr, result)
+		case "K":
+			result := conv.FahrenheitToKelvin(fahr)
+			fmt.Printf("%v°F er %vK\n", fahr, result)
+		default:
+			fmt.Printf("%v°F\n", fahr)
+		}
+	} else if cel != 0.0 {
 
-	// Celsius --> Fahrenheit or Kelvin
-	switch out {
-	case "F":
-		result := conv.CelsiusToFahrenheit(fahr)
-		fmt.Printf("%v°C er %vF\n", fahr, result)
-	case "K":
-		result := conv.CelsiusToKelvin(fahr)
-		fmt.Printf("%v°C er %vK\n", fahr, result)
-	default:
-		fmt.Printf("%v°C\n", fahr)
+		// Celsius --> Fahrenheit or Kelvin
+		switch out {
+		case "F":
+			result := conv.CelsiusToFahrenheit(cel)
+			fmt.Printf("%v°C er %vF\n", cel, result)
+		case "K":
+			result := conv.CelsiusToKelvin(cel)
+			fmt.Printf("%v°C er %vK\n", cel, result)
+		default:
+			fmt.Printf("%v°C\n", cel)
+		}
+	} else if kelvin != 0.0 {
 	}
 
 	//Kelvin --> Celsius or Fahrenheit
 	switch out {
 	case "C":
-		result := conv.KelvinToCelsius(fahr)
-		fmt.Printf("%v°K er %vC\n", fahr, result)
+		result := conv.KelvinToCelsius(kelvin)
+		fmt.Printf("%v°K er %vC\n", kelvin, result)
 	case "F":
-		result := conv.KelvinToFahrenheit(fahr)
-		fmt.Printf("%v°K er %vF\n", fahr, result)
+		result := conv.KelvinToFahrenheit(kelvin)
+		fmt.Printf("%v°K er %vF\n", kelvin, result)
 	default:
-		fmt.Printf("%v°K\n", fahr)
+		fmt.Printf("%v°K\n", kelvin)
 
 	}
 

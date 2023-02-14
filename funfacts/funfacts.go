@@ -9,6 +9,12 @@ func GetFunFact(about string) []string {
 	return (string)
 }
 
+type FunFacts struct {
+	Sun   []string
+	Luna  []string
+	Terra []string
+}
+
 /**
   Implementer funfacts-funksjon:
     GetFunFacts(about string) []string
