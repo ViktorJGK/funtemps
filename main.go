@@ -14,15 +14,11 @@ var kelvin float64
 var out string
 var funfacts string
 
-// Bruker init (som anbefalt i dokumentasjonen) for å sikre at flagvariablene
-// er initialisert.
 func init() {
 
 	/*
-	   Her er eksempler på hvordan man implementerer parsing av flagg.
-	   For eksempel, kommando
-	       funtemps -F 0 -out C
-	   skal returnere output: 0°F er -17.78°C
+		Eksempel på kommando i cmd:
+		       funtemps -F 0 -out C
 	*/
 
 	flag.Float64Var(&fahr, "F", 0.0, "temperatur i grader fahrenheit")

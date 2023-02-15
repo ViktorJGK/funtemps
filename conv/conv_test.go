@@ -5,15 +5,6 @@ import (
 	"testing"
 )
 
-/*
-*
-	Mal for testfunksjoner
-	Du skal skrive alle funksjonene basert på denne malen
-	For alle konverteringsfunksjonene (tilsammen 6)
-	kan du bruke malen som den er (du må selvsagt endre
-	funksjonsnavn og testverdier)
-*/
-
 func TestFahrenheitToCelsius(t *testing.T) {
 	type test struct {
 		input float64
@@ -121,6 +112,3 @@ func TestFahrenheitToKelvin(t *testing.T) {
 		}
 	}
 }
-
-// De andre testfunksjonene implementeres her
-// ...

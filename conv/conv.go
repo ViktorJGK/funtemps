@@ -11,12 +11,7 @@ import "math"
 	FahrenheitToKelvin
 */
 
-// Her skal du implementere funksjonen
-// Du skal ikke formattere float64 i denne funksjonen
-// Gjør formattering i main.go med fmt.Printf eller
-// lignende
-
-// La til math.Round slik at output bare hadde 2 tall bak komma.
+// La til math.Round slik at output bare har 2 tall bak komma.
 func FahrenheitToCelsius(Fahrenheit float64) float64 {
 	Celsius := (Fahrenheit - 32) * 5 / 9
 	return math.Round(Celsius*100) / 100
