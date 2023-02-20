@@ -18,7 +18,7 @@ func init() {
 
 	/*
 		Eksempel på kommando i cmd:
-		       funtemps -F 0 -out C
+		       funtemps -F 100 -out C
 	*/
 
 	flag.Float64Var(&fahr, "F", 0.0, "temperatur i grader fahrenheit")
